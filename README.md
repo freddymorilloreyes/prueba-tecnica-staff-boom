@@ -1,2 +1,57 @@
 # prueba-tecnica-staff-boom
 Prueba tecnica para Staff Boom, Laravel MySQL
+
+
+Proyecto: Sistema de Gestión de Tareas
+Desarrolla un sistema de gestión de tareas en el que los usuarios puedan crear, ver,
+actualizar y eliminar tareas. Debes utilizar Laravel como framework backend y MsSQL
+como base de datos.
+Desarrollo Backend (60% del tiempo total):
+El objetivo es evaluar la capacidad del candidato para diseñar y desarrollar una
+aplicación backend utilizando Laravel y MsSQL.
+
+Requerimientos:
+1. Autenticación de Usuarios:
+ Implemente un sistema de autenticación con roles de &quot;administrador&quot; y
+&quot;usuario&quot;.
+ Asegúrese de que solo los administradores puedan realizar ciertas
+operaciones sensibles.
+
+2. Gestión de Tareas:
+ Los usuarios deben poder crear, editar, marcar como completadas y
+eliminar tareas.
+ Implemente un filtro para mostrar solo las tareas completadas o no
+completadas.
+ Implemente paginación para la visualización de tareas.
+ Realice validaciones adecuadas en los formularios.
+ Los campos de las tareas deben incluir: título, descripción, y fecha de
+vencimiento.
+ Implemente un sistema de búsqueda de tareas por título o descripción.
+ Proporcione API endpoints para todas las operaciones CRUD de tareas.
+ Defina relaciones de base de datos adecuadas entre usuarios y tareas.
+ Use middlewares de autenticación y autorización para proteger las rutas.
+
+Desarrollo Frontend (40% del tiempo total):
+El objetivo es evaluar la capacidad del candidato para crear una interfaz de usuario
+eficiente utilizando el framework o librería de frontend que prefiera.
+Requerimientos:
+ Desarrolle una interfaz amigable y responsive para interactuar con el sistema
+de gestión de tareas.
+ Muestre la lista de tareas con opciones para editar, marcar como completadas
+y eliminar.
+ Cree un formulario para agregar y editar tareas.
+ Implemente filtros visuales para mostrar tareas completadas y no completadas.
+ Diseñe una barra de búsqueda para buscar tareas por título o descripción.
+ Utilice estilos y diseño atractivos para mejorar la experiencia del usuario.
+ Use AJAX o tecnologías similares para mejorar la interacción en tiempo real
+cuando sea necesario.
+Evaluación:
+ Calidad del Código: Limpieza, organización y uso de buenas prácticas de
+programación.
+ Arquitectura y Estructura del Proyecto: Modularidad, escalabilidad y claridad
+de la arquitectura.
+ Implementación de Buenas Prácticas: Seguridad, validaciones, y manejo de
+errores.
+ Eficiencia y Experiencia de Usuario: Rendimiento y usabilidad de la interfaz.
+ Documentación: Instrucciones claras para ejecutar la aplicación localmente y la
+descarga desde un repositorio.
