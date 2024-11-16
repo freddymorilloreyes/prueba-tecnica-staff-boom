@@ -13,7 +13,7 @@ aplicación backend utilizando Laravel y MySQL.
 ### Requerimientos:
 1. Autenticación de Usuarios:
    -  Implemente un sistema de autenticación con roles de &quot;administrador&quot; y
-   &quot;usuario&quot;.
+   &quot;usuario&quot;. ✅
    - Asegúrese de que solo los administradores puedan realizar ciertas
    operaciones sensibles.
 
