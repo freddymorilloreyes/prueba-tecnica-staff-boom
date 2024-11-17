@@ -72,7 +72,7 @@ descarga desde un repositorio.
 - composer install
 - php artisan key:generate
 - npm install && npm run build
-- php artisan migrate
+- php artisan migrate (si no haz creado la base de datos te preguntará si quieres crearla, "Dile que si")
 - php artisan db:seed
 - composer run dev
 
