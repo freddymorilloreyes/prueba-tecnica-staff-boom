@@ -8,9 +8,9 @@ import PrimaryButton from "@/Components/PrimaryButton.jsx"
 const Form = ({task = null, submitButton = 'Create'}) => {
 
     const {data, setData, patch, post, processing, errors} = useForm({
-        title: task?.title,
-        description: task?.description,
-        expiration_date: task?.expiration_date,
+        title: task?.title || '',
+        description: task?.description || '',
+        expiration_date: task?.expiration_date || '',
         complete: false,
     })
 

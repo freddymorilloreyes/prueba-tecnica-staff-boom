@@ -62,7 +62,6 @@ const Filters = ({setIsLoading}) => {
                 defaultValue={perpage.current}
                 onChange={handleChangePerpage}
             >
-                <option>2</option>
                 <option>10</option>
                 <option>20</option>
                 <option>50</option>
