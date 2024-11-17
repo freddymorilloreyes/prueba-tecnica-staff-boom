@@ -15,7 +15,7 @@ aplicación backend utilizando Laravel y MySQL.
    -  Implemente un sistema de autenticación con roles de &quot;administrador&quot; y
    &quot;usuario&quot;. ✅
    - Asegúrese de que solo los administradores puedan realizar ciertas
-   operaciones sensibles.
+   operaciones sensibles. ✅
 
 2. Gestión de Tareas:
    - Los usuarios deben poder crear, editar, marcar como completadas y
@@ -36,15 +36,15 @@ El objetivo es evaluar la capacidad del candidato para crear una interfaz de usu
 eficiente utilizando el framework o librería de frontend que prefiera.
 ### Requerimientos:
 - Desarrolle una interfaz amigable y responsive para interactuar con el sistema
-de gestión de tareas.
+de gestión de tareas.✅
 - Muestre la lista de tareas con opciones para editar, marcar como completadas
-y eliminar.
-- Cree un formulario para agregar y editar tareas.
-- Implemente filtros visuales para mostrar tareas completadas y no completadas.
-- Diseñe una barra de búsqueda para buscar tareas por título o descripción.
-- Utilice estilos y diseño atractivos para mejorar la experiencia del usuario.
+y eliminar.✅
+- Cree un formulario para agregar y editar tareas.✅
+- Implemente filtros visuales para mostrar tareas completadas y no completadas.✅
+- Diseñe una barra de búsqueda para buscar tareas por título o descripción.✅
+- Utilice estilos y diseño atractivos para mejorar la experiencia del usuario.✅
 - Use AJAX o tecnologías similares para mejorar la interacción en tiempo real
-cuando sea necesario.
+cuando sea necesario.✅
 ### Evaluación:
 - Calidad del Código: Limpieza, organización y uso de buenas prácticas de
 programación.
@@ -71,6 +71,8 @@ descarga desde un repositorio.
     - DB_PASSWORD=tu_clave
 - composer install
 - npm install && npm run build
+- php artisan migrate
+- php artisan db:seed
 - composer run dev
 
 ### Visita http://localhost:8000/
