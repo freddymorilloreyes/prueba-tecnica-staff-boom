@@ -28,10 +28,10 @@ export default function AuthenticatedLayout({ header, children }) {
 
                             <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink
-                                    href={route('dashboard')}
-                                    active={route().current('dashboard')}
+                                    href={route('task.list')}
+                                    active={route().current('task.list')}
                                 >
-                                    Dashboard
+                                    My Tasks
                                 </NavLink>
                             </div>
                         </div>
