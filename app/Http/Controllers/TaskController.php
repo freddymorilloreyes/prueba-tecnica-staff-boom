@@ -15,7 +15,7 @@ class TaskController extends Controller
 {
     public function index(): Response
     {
-        $tasks = Auth::user()->tasks;
+        $tasks = Task::where('user_id',Auth::user()->id)->paginate(1);
         return Inertia::render('Task/Index', compact('tasks'));
     }
 

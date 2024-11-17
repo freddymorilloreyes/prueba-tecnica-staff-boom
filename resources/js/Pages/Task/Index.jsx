@@ -1,6 +1,7 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.jsx";
 import {Head, Link} from "@inertiajs/react";
 import DetailsCard from "@/Pages/Task/DetailsCard.jsx";
+import Pagination from "@/Components/Pagination.jsx";
 
 const Index = ({tasks}) => {
 
@@ -23,10 +24,13 @@ const Index = ({tasks}) => {
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900">
-                            {tasks.map(task => (
+                            {tasks.data.map(task => (
                                 <DetailsCard key={task.id} task={task}/>
                             ))}
                         </div>
+                    </div>
+                    <div className="py-12 px-4">
+                        <Pagination links={tasks.links}/>
                     </div>
                 </div>
             </div>

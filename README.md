@@ -19,17 +19,17 @@ aplicación backend utilizando Laravel y MySQL.
 
 2. Gestión de Tareas:
    - Los usuarios deben poder crear, editar, marcar como completadas y
-   eliminar tareas.
+   eliminar tareas. ✅
    - Implemente un filtro para mostrar solo las tareas completadas o no
    completadas.
    - Implemente paginación para la visualización de tareas.
-   - Realice validaciones adecuadas en los formularios.
+   - Realice validaciones adecuadas en los formularios. ✅
    - Los campos de las tareas deben incluir: título, descripción, y fecha de
-   vencimiento.
+   vencimiento. ✅
    - Implemente un sistema de búsqueda de tareas por título o descripción.
    - Proporcione API endpoints para todas las operaciones CRUD de tareas.
-   - Defina relaciones de base de datos adecuadas entre usuarios y tareas.
-   - Use middlewares de autenticación y autorización para proteger las rutas.
+   - Defina relaciones de base de datos adecuadas entre usuarios y tareas. ✅
+   - Use middlewares de autenticación y autorización para proteger las rutas. ✅
 
 ## Desarrollo Frontend (40% del tiempo total):
 El objetivo es evaluar la capacidad del candidato para crear una interfaz de usuario
