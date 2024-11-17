@@ -33,7 +33,7 @@ class TaskFactory extends Factory
         $randomUserId = rand(1, 10);
         $task = $tasks[$randomNumber];
         return [
-            'title' => $task['title'],
+            'title' => $task['title'] . $randomUserId . $randomNumber,
             'description' => $task['description'],
             'expiration_date' => $this->getRandomDateNextMonth(),
             'user_id' => $randomUserId,
