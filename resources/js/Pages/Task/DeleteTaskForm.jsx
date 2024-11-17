@@ -2,7 +2,8 @@ import DangerButton from '@/Components/DangerButton';
 import Modal from '@/Components/Modal';
 import SecondaryButton from '@/Components/SecondaryButton';
 import {useForm} from '@inertiajs/react';
-import {useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
+import {Trash2} from "lucide-react";
 
 export default function DeleteTaskForm({task}) {
     const [confirmingTaskDeletion, setConfirmingTaskDeletion] = useState(false);
@@ -39,7 +40,7 @@ export default function DeleteTaskForm({task}) {
         <>
 
             <DangerButton onClick={confirmTaskDeletion}>
-                Delete
+                <Trash2 className=""/>
             </DangerButton>
 
             <Modal show={confirmingTaskDeletion} onClose={closeModal}>
@@ -47,17 +48,13 @@ export default function DeleteTaskForm({task}) {
                     <h2 className="text-lg font-medium text-gray-900">
                         Are you sure you want to delete your task?
                     </h2>
-
                     <p className="mt-1 text-sm text-gray-600">
                         {task.title}
                     </p>
-
-
                     <div className="mt-6 flex justify-end">
                         <SecondaryButton onClick={closeModal}>
                             Cancel
                         </SecondaryButton>
-
                         <DangerButton className="ms-3" disabled={processing}>
                             Delete
                         </DangerButton>

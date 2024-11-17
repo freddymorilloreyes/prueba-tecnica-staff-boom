@@ -22,7 +22,9 @@
         "vite": "^5.0"
     },
     "dependencies": {
+        "flowbite-react": "^0.10.2",
         "lodash": "^4.17.21",
+        "lucide-react": "^0.460.0",
         "react-toastify": "^10.0.6"
     }
 }

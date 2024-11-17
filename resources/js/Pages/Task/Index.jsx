@@ -1,9 +1,9 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.jsx";
 import {Head, Link} from "@inertiajs/react";
-import DetailsCard from "@/Pages/Task/DetailsCard.jsx";
 import Pagination from "@/Components/Pagination.jsx";
 import {useState} from "react";
 import Filters from "@/Pages/Task/Filters.jsx";
+import List from "@/Pages/Task/List.jsx";
 
 const Index = ({tasks}) => {
     const [isLoading, setIsLoading] = useState(false);
@@ -26,16 +26,7 @@ const Index = ({tasks}) => {
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <Filters setIsLoading={setIsLoading}/>
                     <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900">
-                            {isLoading ? (
-                                    <>Loading...</>
-                                ) :
-                                (
-                                    tasks.data.map(task => (
-                                        <DetailsCard key={task.id} task={task}/>
-                                    ))
-                                )}
-                        </div>
+                        <List tasks={tasks.data} isLoading={isLoading}/>
                     </div>
                     <div className="py-12 px-4">
                         <Pagination links={tasks.links}/>

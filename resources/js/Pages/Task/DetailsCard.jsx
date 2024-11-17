@@ -1,6 +1,8 @@
 import {Link} from "@inertiajs/react";
-import {useState} from "react";
+import React, {useState} from "react";
 import {Slide, toast} from "react-toastify";
+import {Button, Card} from "flowbite-react";
+import {Pencil, Trash2} from "lucide-react";
 import DeleteTaskForm from "@/Pages/Task/DeleteTaskForm.jsx";
 
 const DetailsCard = ({task}) => {
@@ -42,26 +44,38 @@ const DetailsCard = ({task}) => {
             })
     };
     return (
-        <div key={task.id}
-             className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <a href="#">
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{task.title}</h5>
-            </a>
-            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{task.description}</p>
-            <Link href={route('task.edit', [task])}
-                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Edit
-            </Link>
+        <>
+            <div className={`p-4 shadow sm:rounded-lg sm:p-8 ${complete ? "bg-green-100" : "bg-white"}`}>
+                <section className="space-y-6 max-w-xl">
+                    <header>
+                        <h2 className="text-lg font-medium text-gray-900">{task.title}</h2>
+                        <p className="mt-1 text-sm text-gray-600">{task.description}</p>
+                    </header>
+                    <div className="flex justify-between items-center">
+                        <div className="flex items-center space-x-2">
+                            <label className="inline-flex items-center cursor-pointer">
+                                <input type="checkbox" className="sr-only peer" checked={complete} disabled={processing}
+                                       onChange={handleToggleComplete}/>
+                                <div
+                                    className="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                                <span
+                                    className="ms-3 text-sm font-medium">{complete ? 'Completed' : 'Pending'}</span>
+                            </label>
+                        </div>
+                        <div className="flex space-x-2">
+                            <Link href={route('task.edit', [task])}
+                                  className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                <Pencil className=""/>
+                            </Link>
+                            <DeleteTaskForm task={task}/>
+                            <Button color="failure" size="sm" onClick={() => handleDelete(task.id)}>
 
-            <label className="inline-flex items-center cursor-pointer">
-                <input type="checkbox" value="" className="sr-only peer" checked={complete} disabled={processing}
-                       onChange={handleToggleComplete}/>
-                <div
-                    className="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                <span className="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Complete</span>
-                <DeleteTaskForm task={task}/>
-            </label>
-        </div>
+                            </Button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </>
     )
 }
 
