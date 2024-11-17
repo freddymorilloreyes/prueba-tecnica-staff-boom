@@ -11,13 +11,16 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Inertia\Inertia;
 use Inertia\Response;
-use function Laravel\Prompts\search;
 
 class TaskController extends Controller
 {
     public function index(Request $request): Response
     {
-        $tasks = Task::search($request->search)->where('user_id',Auth::user()->id)->paginate($request->perpage ?? 10);
+        $query = Task::search($request->search)->where('user_id', Auth::user()->id);
+        if (!is_null($request->complete)) {
+            $query->where('complete', $request->complete);
+        }
+        $tasks = $query->paginate($request->perpage ?? 10);
         return Inertia::render('Task/Index', compact('tasks'));
     }
 

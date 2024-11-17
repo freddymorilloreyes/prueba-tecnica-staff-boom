@@ -9,6 +9,7 @@ import {useMemo, useRef, useState} from "react";
 const Index = ({tasks}) => {
 
     const perpage = useRef(10);
+    const complete = useRef(null);
     const [search, setSearch] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
@@ -30,6 +31,11 @@ const Index = ({tasks}) => {
         getData(search); // Usamos el estado actual para la búsqueda
     };
 
+    const handleChangeComplete = (e) => {
+        complete.current = e.target.value;
+        getData(search); // Usamos el estado actual para la búsqueda
+    };
+
     const getData = (searchValue) => {
         setIsLoading(true);
         const name = route().current();
@@ -37,6 +43,7 @@ const Index = ({tasks}) => {
             route(name),
             {
                 perpage: perpage.current,
+                complete: complete.current,
                 search: searchValue, // Usamos el valor pasado como parámetro
             },
             {
@@ -46,6 +53,7 @@ const Index = ({tasks}) => {
             }
         );
     };
+
     return (
         <AuthenticatedLayout
             header={
@@ -66,7 +74,7 @@ const Index = ({tasks}) => {
                     <select
                         name="perpage"
                         id="perpage"
-                        value={perpage.current}
+                        defaultValue={perpage.current}
                         onChange={handleChangePerpage}
                     >
                         <option>2</option>
@@ -74,6 +82,16 @@ const Index = ({tasks}) => {
                         <option>20</option>
                         <option>50</option>
                         <option>100</option>
+                    </select>
+                    <select
+                        name="complete"
+                        id="complete"
+                        defaultValue={complete.current}
+                        onChange={handleChangeComplete}
+                    >
+                        <option value=''>All</option>
+                        <option value='1'>Complete</option>
+                        <option value='0'>Not complete</option>
                     </select>
                     <TextInput
                         id="search"
