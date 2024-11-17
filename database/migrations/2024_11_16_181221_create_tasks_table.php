@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('name');
+            $table->string('title');
             $table->text('description')->nullable(false);
-            $table->dateTime('expiration_date')->nullable(false);
+            $table->date('expiration_date')->nullable(false);
             $table->boolean('complete')->default(false);
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
