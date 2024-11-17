@@ -6,19 +6,13 @@ import {useRef, useState} from 'react';
 
 export default function DeleteTaskForm({task}) {
     const [confirmingTaskDeletion, setConfirmingTaskDeletion] = useState(false);
-    const passwordInput = useRef();
 
     const {
-        data,
-        setData,
         delete: destroy,
         processing,
         reset,
-        errors,
         clearErrors,
-    } = useForm({
-        password: '',
-    });
+    } = useForm();
 
     const confirmTaskDeletion = () => {
         setConfirmingTaskDeletion(true);

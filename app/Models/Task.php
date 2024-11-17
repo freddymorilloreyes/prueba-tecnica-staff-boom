@@ -7,13 +7,12 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Laravel\Scout\Searchable;
 
 class Task extends Model
 {
     /** @use HasFactory<TaskFactory> */
-    use HasFactory;
-
-    use HasUuids;
+    use HasFactory, HasUuids, Searchable;
 
     /**
      * The attributes that are mass assignable.
@@ -30,5 +29,13 @@ class Task extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function toSearchableArray(): array
+    {
+        return [
+            'title' => $this->title,
+            'description' => $this->description,
+        ];
     }
 }

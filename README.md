@@ -22,7 +22,7 @@ aplicación backend utilizando Laravel y MySQL.
    eliminar tareas. ✅
    - Implemente un filtro para mostrar solo las tareas completadas o no
    completadas.
-   - Implemente paginación para la visualización de tareas.
+   - Implemente paginación para la visualización de tareas.✅
    - Realice validaciones adecuadas en los formularios. ✅
    - Los campos de las tareas deben incluir: título, descripción, y fecha de
    vencimiento. ✅

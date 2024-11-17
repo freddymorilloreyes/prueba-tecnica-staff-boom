@@ -5,17 +5,19 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
 use App\Models\Task;
+use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Inertia\Inertia;
 use Inertia\Response;
+use function Laravel\Prompts\search;
 
 class TaskController extends Controller
 {
-    public function index(): Response
+    public function index(Request $request): Response
     {
-        $tasks = Task::where('user_id',Auth::user()->id)->paginate(1);
+        $tasks = Task::search($request->search)->where('user_id',Auth::user()->id)->paginate($request->perpage ?? 10);
         return Inertia::render('Task/Index', compact('tasks'));
     }
 

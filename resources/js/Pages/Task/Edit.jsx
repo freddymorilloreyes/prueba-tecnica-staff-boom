@@ -48,7 +48,6 @@ const Create = ({task}) => {
                                         name="title"
                                         value={data.title}
                                         className="mt-1 block w-full"
-                                        autoComplete="username"
                                         isFocused={true}
                                         onChange={(e) => setData('title', e.target.value)}
                                     />
@@ -63,7 +62,6 @@ const Create = ({task}) => {
                                         name="description"
                                         value={data.description}
                                         className="mt-1 block w-full"
-                                        autoComplete="username"
                                         isFocused={true}
                                         onChange={(e) => setData('description', e.target.value)}
                                     />
@@ -79,7 +77,6 @@ const Create = ({task}) => {
                                         name="expiration_date"
                                         value={data.expiration_date}
                                         className="mt-1 block w-full"
-                                        autoComplete="username"
                                         isFocused={true}
                                         onChange={(e) => setData('expiration_date', e.target.value)}
                                     />
