@@ -68,9 +68,6 @@ const DetailsCard = ({task}) => {
                                 <Pencil className=""/>
                             </Link>
                             <DeleteTaskForm task={task}/>
-                            <Button color="failure" size="sm" onClick={() => handleDelete(task.id)}>
-
-                            </Button>
                         </div>
                     </div>
                 </section>
