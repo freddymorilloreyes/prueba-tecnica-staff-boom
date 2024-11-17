@@ -20,7 +20,7 @@ class TaskController extends Controller
         if (!is_null($request->complete)) {
             $query->where('complete', $request->complete);
         }
-        $tasks = $query->paginate($request->perpage ?? 10);
+        $tasks = $query->paginate($request->perpage ?? 12);
         return Inertia::render('Task/Index', compact('tasks'));
     }
 

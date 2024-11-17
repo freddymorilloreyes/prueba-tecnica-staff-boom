@@ -8,7 +8,7 @@ import {X} from "lucide-react";
 const Filters = ({setIsLoading}) => {
 
     const currentParams = getCurrentParams();
-    const perpage = useRef(currentParams['perpage'] ?? 10);
+    const perpage = useRef(currentParams['perpage'] ?? 12);
     const complete = useRef(currentParams['complete'] ?? "");
     const [search, setSearch] = useState(currentParams['search'] ?? "");
 
@@ -92,9 +92,9 @@ const Filters = ({setIsLoading}) => {
                         defaultValue={perpage.current}
                         onChange={handleChangePerpage}
                     >
-                        <option>10</option>
-                        <option>20</option>
-                        <option>50</option>
+                        <option>12</option>
+                        <option>24</option>
+                        <option>48</option>
                         <option>100</option>
                     </select>
                 </div>
