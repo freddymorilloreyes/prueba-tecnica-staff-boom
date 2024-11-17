@@ -6,19 +6,18 @@ import InputError from "@/Components/InputError.jsx"
 import Checkbox from "@/Components/Checkbox.jsx"
 import PrimaryButton from "@/Components/PrimaryButton.jsx"
 
-const Create = () => {
-
-    const {data, setData, post, processing, errors} = useForm({
-        title: '',
-        description: '',
-        expiration_date: '',
-        complete: false,
+const Create = ({task}) => {
+    console.log(task)
+    const {data, setData, patch, processing, errors} = useForm({
+        title: task.title,
+        description: task.description,
+        expiration_date: task.expiration_date,
     })
 
     const submit = (e) => {
         e.preventDefault()
         // console.log(data)
-        post(route('task.store'))
+        patch(route('task.update', task))
     }
 
     return (
@@ -26,7 +25,7 @@ const Create = () => {
             header={
                 <div className="flex justify-between">
                     <h2 className="text-xl font-semibold leading-tight text-gray-800">
-                        Create Task
+                        Update Task
                     </h2>
                     <Link href={route('task.list')}>
                         Task List
@@ -86,20 +85,6 @@ const Create = () => {
                                     />
 
                                     <InputError message={errors.title} className="mt-2"/>
-                                </div>
-                                <div className="mt-4 block">
-                                    <label className="flex items-center">
-                                        <Checkbox
-                                            name="complete"
-                                            checked={data.complete}
-                                            onChange={(e) =>
-                                                setData('complete', e.target.checked)
-                                            }
-                                        />
-                                        <span className="ms-2 text-sm text-gray-600">
-                            Complete
-                        </span>
-                                    </label>
                                 </div>
 
                                 <div className="mt-4 flex items-center justify-end">
