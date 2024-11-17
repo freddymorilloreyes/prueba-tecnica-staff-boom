@@ -85,7 +85,7 @@ export default function Welcome({auth, laravelVersion, phpVersion}) {
 
 
                                         <p className="mt-4 text-m/relaxed">
-                                            si ya ejecutaste php artisan db:seed, ¡LISTO! Entonces cuentas con varios usuarios y tareas creadas para el uso de la plataforma de gestión de tareas
+                                            si ya ejecutaste <span className="text-black font-bold">php artisan db:seed</span>, ¡LISTO! Entonces cuentas con varios usuarios y tareas creadas para el uso de la plataforma de gestión de tareas
                                         </p>
                                         <p className="mt-4 text-m/relaxed">
                                             Si no lo has ejecutado, entonces hazlo para tener los usuarios necesarios para la revisión
