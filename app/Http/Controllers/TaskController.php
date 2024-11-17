@@ -41,4 +41,12 @@ class TaskController extends Controller
         $task->update($data);
         return to_route('task.list')->with('success', 'Task updated successfully.');
     }
+
+    public function toggleComplete(Task $task)
+    {
+        sleep(1);
+        $data['complete'] = !$task->complete;
+        $task->update($data);
+//        return to_route('task.list')->with('success', 'Task updated successfully.');
+    }
 }

@@ -31,6 +31,7 @@ Route::prefix('task')->name('task.')->group(function () {
     Route::post('store', [TaskController::class, 'store'])->name('store');
     Route::get('{task}/edit', [TaskController::class, 'edit'])->name('edit');
     Route::patch('{task}/update', [TaskController::class, 'update'])->name('update');
+    Route::patch('{task}/toggle/complete', [TaskController::class, 'toggleComplete'])->name('toggle.complete');
 });
 
 require __DIR__.'/auth.php';
