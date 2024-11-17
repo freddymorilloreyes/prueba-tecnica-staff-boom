@@ -110,8 +110,8 @@ const Filters = ({setIsLoading}) => {
                         onChange={handleChangeComplete}
                     >
                         <option value=''>All</option>
-                        <option value='1'>Complete</option>
-                        <option value='0'>Not complete</option>
+                        <option value='1'>Completed</option>
+                        <option value='0'>Pending</option>
                     </select>
                 </div>
             </div>
