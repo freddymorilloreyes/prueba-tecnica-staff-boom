@@ -70,6 +70,7 @@ descarga desde un repositorio.
     - DB_USERNAME=tu_usuario
     - DB_PASSWORD=tu_clave
 - composer install
+- php artisan key:generate
 - npm install && npm run build
 - php artisan migrate
 - php artisan db:seed
