@@ -78,4 +78,46 @@ descarga desde un repositorio.
 
 ### Visita http://localhost:8000/
 
+## API de Gestión de Tareas
 
+### 1. Autenticación
+Antes de hacer la gestion de la tareas usando los end-point primero debes estar auntenticado
+
+- URL: /api/login
+- Método: POST
+- {"email": "usuario@example.com","password": "contraseña123"}
+- Respuesta Exitosa:
+{
+"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+
+#### Nota: Guarda el token obtenido; será necesario para autenticarte en los demás endpoints.
+
+####  Encabezados para las solicitudes protegidas:
+
+- Authorization: Bearer {TOKEN}
+
+### 2. Endpoints de Tareas
+   - a. Listar Tareas
+   - - URL: /api/task/list
+   - - Método: GET
+   - b. Ver Detalle de una Tarea
+       - - URL: /api/task/{id}
+     - - Método: GET
+     - - Descripción: Muestra los detalles de una tarea específica.
+   - c. Crear una Nueva Tarea
+       - - URL: /api/task/store
+       - - Método: POST
+     - - Descripción: Crea una nueva tarea para el usuario autenticado.
+   - d. Actualizar una Tarea
+     - - URL: /api/task/{id}/update
+     - - Método: PATCH
+     - - Descripción: Actualiza una tarea específica.
+   - e. Cambiar Estado de Completo
+     - - URL: /api/task/{id}/toggle/complete
+     - - Método: PATCH
+     - - Descripción: Alterna el estado de la tarea entre completo e incompleto.
+   - f. Eliminar una Tarea
+     - - URL: /api/task/{id}/destroy
+     - - Método: DELETE
+     - - Descripción: Elimina una tarea específica.
