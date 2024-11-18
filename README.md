@@ -27,7 +27,7 @@ aplicación backend utilizando Laravel y MySQL.
    - Los campos de las tareas deben incluir: título, descripción, y fecha de
    vencimiento. ✅
    - Implemente un sistema de búsqueda de tareas por título o descripción.✅
-   - Proporcione API endpoints para todas las operaciones CRUD de tareas.
+   - Proporcione API endpoints para todas las operaciones CRUD de tareas.✅
    - Defina relaciones de base de datos adecuadas entre usuarios y tareas. ✅
    - Use middlewares de autenticación y autorización para proteger las rutas. ✅
 
@@ -77,6 +77,5 @@ descarga desde un repositorio.
 - composer run dev
 
 ### Visita http://localhost:8000/
-
 
 
