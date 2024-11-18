@@ -7,11 +7,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::prefix('task')->middleware('auth:sanctum')->name('task.')->group(function () {
+Route::prefix('task')->middleware('auth:sanctum')->name('api.task.')->group(function () {
     Route::get('list', [TaskController::class, 'index'])->name('list');
+    Route::get('{task}', [TaskController::class, 'show'])->name('show');
     Route::post('store', [TaskController::class, 'store'])->name('store');
-//    Route::get('{task}/edit', [TaskController::class, 'edit'])->name('edit');
-//    Route::patch('{task}/update', [TaskController::class, 'update'])->name('update');
-//    Route::patch('{task}/toggle/complete', [TaskController::class, 'toggleComplete'])->name('toggle.complete');
-//    Route::delete('{task}/destroy', [TaskController::class, 'destroy'])->name('destroy');
+    Route::patch('{task}/update', [TaskController::class, 'update'])->name('update');
+    Route::patch('{task}/toggle/complete', [TaskController::class, 'toggleComplete'])->name('toggle.complete');
+    Route::delete('{task}/destroy', [TaskController::class, 'destroy'])->name('destroy');
 });

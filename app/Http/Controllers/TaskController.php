@@ -6,6 +6,9 @@ use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
 use App\Models\Task;
 use App\Service\Task\UseCase\CreateTaskUseCase;
+use App\Service\Task\UseCase\DestroyTaskUseCase;
+use App\Service\Task\UseCase\ToggleCompleteTaskUseCase;
+use App\Service\Task\UseCase\UpdateTaskUseCase;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
@@ -42,25 +45,20 @@ class TaskController extends Controller
         return Inertia::render('Task/Edit', compact('task'));
     }
 
-    public function update(UpdateTaskRequest $request, Task $task): RedirectResponse
+    public function update(UpdateTaskRequest $request, Task $task, UpdateTaskUseCase $useCase): RedirectResponse
     {
-        Gate::authorize('update', $task);
-        $data = $request->only('title', 'description', 'expiration_date');
-        $task->update($data);
+        $useCase->handle($request, $task);
         return to_route('task.list')->with('success', 'Task updated successfully.');
     }
 
-    public function toggleComplete(Task $task)
+    public function toggleComplete(Task $task, ToggleCompleteTaskUseCase $useCase)
     {
-        Gate::authorize('update', $task);
-        $data['complete'] = !$task->complete;
-        $task->update($data);
+        $useCase->handle($task);
     }
 
-    public function destroy(Task $task): RedirectResponse
+    public function destroy(Task $task, DestroyTaskUseCase $useCase): RedirectResponse
     {
-        Gate::authorize('delete', $task);
-        $task->delete();
+        $useCase->handle($task);
         return to_route('task.list')->with('success', 'Task deleted successfully.');
     }
 }
