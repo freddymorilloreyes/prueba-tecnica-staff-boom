@@ -9,7 +9,7 @@ import {Home} from "lucide-react";
 
 export default function AuthenticatedLayout({ header, children }) {
     const user = usePage().props.auth.user;
-
+    const isAdmin = user.role.toUpperCase() === "ADMIN"
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
 
@@ -33,6 +33,15 @@ export default function AuthenticatedLayout({ header, children }) {
                                 >
                                     Dashboard
                                 </NavLink>
+                                {
+                                    isAdmin &&
+                                    <NavLink
+                                        href={route('admin.users')}
+                                        active={route().current('admin.users')}
+                                    >
+                                        Users
+                                    </NavLink>
+                                }
                                 <NavLink
                                     href={route('task.list')}
                                     active={route().current('task.list')}

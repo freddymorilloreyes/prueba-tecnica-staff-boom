@@ -24,7 +24,7 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
-        $randomNumber = rand(1, 1000);
+        $randomNumber = rand(1, 10000);
         return [
             'name' => 'Staff Boom' . $randomNumber,
             'email' => 'staffboom_'. $randomNumber.'@staffboom.com',
