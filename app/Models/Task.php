@@ -24,6 +24,7 @@ class Task extends Model
         'description',
         'expiration_date',
         'complete',
+        'user_id',
     ];
 
     public function user(): BelongsTo

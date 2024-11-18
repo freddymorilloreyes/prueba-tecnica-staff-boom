@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
 use App\Models\Task;
+use App\Service\Task\UseCase\CreateTaskUseCase;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
@@ -29,10 +30,9 @@ class TaskController extends Controller
         return Inertia::render('Task/Create');
     }
 
-    public function store(StoreTaskRequest $request): RedirectResponse
+    public function store(StoreTaskRequest $request, CreateTaskUseCase $useCase): RedirectResponse
     {
-        $data = $request->only('title', 'description', 'expiration_date', 'complete');
-        Auth::user()->tasks()->create($data);
+        $useCase->handle($request);
         return to_route('task.list')->with('success', 'Task created successfully.');
     }
 

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreTaskRequest;
+use App\Http\Resources\TaskResource;
 use App\Models\Task;
+use App\Service\Task\UseCase\CreateTaskUseCase;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -15,23 +18,15 @@ class TaskController extends Controller
     public function index(Request $request)
     {
         $tasks = $request->user()->tasks;
-        return response()->json($tasks);
+        return TaskResource::collection($tasks);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreTaskRequest $request, CreateTaskUseCase $useCase)
     {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'expiration_date' => 'nullable|date',
-            'complete' => 'nullable|boolean',
-        ]);
-
-        $task = $request->user()->tasks()->create($validated);
-
+        return new TaskResource($useCase->handle($request));
         return response()->json($task, Response::HTTP_CREATED);
     }
 
