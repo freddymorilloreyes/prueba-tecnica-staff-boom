@@ -1,13 +1,8 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.jsx";
-import {Head, Link} from "@inertiajs/react";
+import {Head} from "@inertiajs/react";
 import Pagination from "@/Components/Pagination.jsx";
-import {useState} from "react";
-import Filters from "@/Pages/Task/Filters.jsx";
-import List from "@/Pages/Task/List.jsx";
 
 const Index = ({users}) => {
-    console.log(users)
-
     return (
         <AuthenticatedLayout
             header={
