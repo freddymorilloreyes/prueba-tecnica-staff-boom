@@ -18,17 +18,18 @@ class TaskFactory extends Factory
     public function definition(): array
     {
         $tasks = [
-            ['title' => 'Salir de compras', 'description' => 'Comprar medicinas para el perro y algunos víveres.', 'expiration_date' => '2024-11-20'],
-            ['title' => 'Reunión con el equipo', 'description' => 'Discutir los avances del proyecto y planificar las siguientes tareas.', 'expiration_date' => '2024-11-22'],
-            ['title' => 'Hacer ejercicio', 'description' => 'Ir al gimnasio o hacer una rutina en casa.', 'expiration_date' => '2024-11-19'],
-            ['title' => 'Actualizar CV', 'description' => 'Añadir la experiencia reciente y mejorar el diseño.', 'expiration_date' => '2024-11-25'],
-            ['title' => 'Leer un libro', 'description' => 'Avanzar con el capítulo 5 de la novela.', 'expiration_date' => '2024-11-21'],
-            ['title' => 'Visitar al médico', 'description' => 'Chequeo general anual con el doctor.', 'expiration_date' => '2024-11-26'],
-            ['title' => 'Preparar presentación', 'description' => 'Crear las diapositivas para la reunión del lunes.', 'expiration_date' => '2024-11-24'],
-            ['title' => 'Limpiar la casa', 'description' => 'Organizar el escritorio y limpiar la sala.', 'expiration_date' => '2024-11-23'],
-            ['title' => 'Pagar facturas', 'description' => 'Pagar el servicio de internet y la luz.', 'expiration_date' => '2024-11-18'],
-            ['title' => 'Enviar reportes', 'description' => 'Enviar el reporte mensual al jefe.', 'expiration_date' => '2024-11-27'],
+            ['title' => 'Go shopping', 'description' => 'Buy medicines for the dog and some groceries.'],
+            ['title' => 'Team meeting', 'description' => 'Discuss project progress and plan the next tasks.'],
+            ['title' => 'Exercise', 'description' => 'Go to the gym or do a home workout routine.'],
+            ['title' => 'Update CV', 'description' => 'Add recent experience and improve the design.'],
+            ['title' => 'Read a book', 'description' => 'Progress through chapter 5 of the novel.'],
+            ['title' => 'Visit the doctor', 'description' => 'Annual general check-up with the doctor.'],
+            ['title' => 'Prepare presentation', 'description' => 'Create slides for the Monday meeting.'],
+            ['title' => 'Clean the house', 'description' => 'Organize the desk and clean the living room.'],
+            ['title' => 'Pay bills', 'description' => 'Pay for internet and electricity services.'],
+            ['title' => 'Send reports', 'description' => 'Send the monthly report to the boss.'],
         ];
+
         $randomNumber = rand(0, 9);
         $randomUserId = rand(1, 10);
         $task = $tasks[$randomNumber];

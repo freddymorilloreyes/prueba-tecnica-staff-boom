@@ -17,14 +17,13 @@ export default function Dashboard({tasks, completed, pending}) {
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900">
-                            En esta plataforma podrás administrar las tareas por ejecutar y tener al día las
-                            obligaciones que se te puedan pasar por alto
+                            In this platform, you can manage the tasks to be executed and keep track of your obligations that you might overlook.
                         </div>
                     </div>
                     {tasks > 0 ? (
                             <>
                                 <div className="p-6 text-gray-900">
-                                    Porcentaje de completadas {tasks > 0 ? Math.round(((completed/tasks)*100)) : 0 } %
+                                    Completion percentage: {tasks > 0 ? Math.round(((completed/tasks)*100)) : 0 } %
                                 </div>
                                 <TasksChart tasks={tasks} completed={completed} pending={pending}/>
                             </>

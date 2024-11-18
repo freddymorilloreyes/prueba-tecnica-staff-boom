@@ -66,11 +66,11 @@ export default function Welcome({auth, laravelVersion, phpVersion}) {
                                 >
                                     <div className="pt-3 sm:pt-5">
                                         <h2 className="text-xl font-semibold text-black">
-                                            Prueba técnica para Staff Boom
+                                            Technical Test for Staff Boom
                                         </h2>
 
                                         <p className="mt-4 text-m/relaxed">
-                                            En esta prueba encontrarás un listado administrable de tareas, las cuales puedes crear, editar, completar o eliminar
+                                            In this test, you will find a manageable task list where you can create, edit, complete, or delete tasks
                                         </p>
                                     </div>
                                 </div>
@@ -80,15 +80,16 @@ export default function Welcome({auth, laravelVersion, phpVersion}) {
 
                                     <div className="pt-3 sm:pt-5">
                                         <h2 className="text-xl font-semibold text-black">
-                                            Usuarios y tareas
+                                            Users and Tasks
                                         </h2>
 
 
                                         <p className="mt-4 text-m/relaxed">
-                                            si ya ejecutaste <span className="text-black font-bold">php artisan db:seed</span>, ¡LISTO! Entonces cuentas con varios usuarios y tareas creadas para el uso de la plataforma de gestión de tareas
+                                            If you have already run <span className="text-black font-bold">php artisan db:seed</span>,
+                                            you're all set! This will provide you with several users and tasks created for the task management platform.
                                         </p>
                                         <p className="mt-4 text-m/relaxed">
-                                            Si no lo has ejecutado, entonces hazlo para tener los usuarios necesarios para la revisión
+                                            If you haven’t run it yet, please do so to have the necessary users for review.
                                         </p>
                                     </div>
                                 </div>
@@ -101,7 +102,7 @@ export default function Welcome({auth, laravelVersion, phpVersion}) {
                                         </h2>
 
                                         <p className="mt-4 text-m/relaxed">
-                                            Tengo un usuario "admin" con las siguientes credenciales
+                                            An admin user is available with the following credentials:
                                         </p>
                                         <p className="mt-4 text-m/relaxed">
                                             Email: admin@staffboom.com
@@ -120,7 +121,7 @@ export default function Welcome({auth, laravelVersion, phpVersion}) {
                                         </h2>
 
                                         <p className="mt-4 text-m/relaxed">
-                                            Tengo un usuario "user" con las siguientes credenciales
+                                            A standard user is available with the following credentials:
                                         </p>
                                         <p className="mt-4 text-m/relaxed">
                                             Email: user@staffboom.com
